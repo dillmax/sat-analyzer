@@ -53,7 +53,7 @@ const fetchData = () => {
   });
 };
 
-export default function Pwr_Chart() {
+export default function PwrChart() {
   // @ts-ignore
   const { data, isLoading, error } = useQuery({
     queryKey: ["updateSerial"],
@@ -79,15 +79,16 @@ export default function Pwr_Chart() {
   };
 
   if (isLoading) {
-    return;
+    return <></>;
   }
 
-  if (data) {
-    console.log("data=x ", data);
-    return (
-      <div>
-        <LineChart data={data} options={options} />
-      </div>
-    );
+  if (!data) {
+    return <></>;
   }
+
+  return (
+    <div>
+      <LineChart data={data} options={options} />
+    </div>
+  );
 }

@@ -3,7 +3,7 @@ import { invoke } from "@tauri-apps/api/tauri";
 import { QueryClient, QueryClientProvider } from 'react-query';
 import MessageBox from "../components/message_box";
 import WindowBar from "../components/menu";
-import Pwr_Chart from "../components/Pwr_Chart";
+import PwrChart from "../components/pwr_chart";
 
 const queryClient = new QueryClient()
 
@@ -19,7 +19,7 @@ export default function Home() {
     <main className="flex flex-col justify-between w-screen h-screen min-h-screen gap-0 overflow-hidden bg-black">
       <WindowBar />
       <MessageBox isDropped={isDropped} />
-      <Pwr_Chart />
+      <PwrChart />
     </main>
     </QueryClientProvider>
   );
